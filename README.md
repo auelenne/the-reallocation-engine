@@ -217,6 +217,7 @@ Relevant paths:
 | 15 | [The Pipeline Tracker and the Skip Rate](chapters/15-the-pipeline-tracker-and-the-skip-rate.md) | Makes skip a first-class logged decision. |
 | 16 | [The Build and the Honest Run](chapters/16-the-build-and-the-honest-run.md) | Integrates the system through phase-gated build and verification. |
 | 97 | [Fundamental Themes](chapters/97-fundamental-themes.md) | Synthesizes the book's recurring architecture. |
+| 98 | [Appendix: Best Practices](chapters/98-appendix-best-practices.md) | Collects repo, data, script, skill, phase-gate, and logging rules. |
 
 ## Operating Principles
 

@@ -56,6 +56,9 @@
 
 ## Back Matter
 
+- **Appendix: Best Practices for Running the Reallocation Engine** — repository
+  structure, verified-data-first rules, vetted-script-first rules, phase gates,
+  skill shape, and logging expectations.
 - **Acknowledgments**
 - **About the Author**
 - **Notes** *(if using endnotes)*
