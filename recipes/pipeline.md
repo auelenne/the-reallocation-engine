@@ -1,6 +1,6 @@
 ---
 status: DRAFT
-todos_open: 11
+todos_open: 10
 last_gate: null
 attestation: null
 recipe_version: 0.1.0
@@ -22,9 +22,32 @@ Move collected job URLs through explicit evidence checks before role evaluation 
 
 | Input | Type | Source | Required? |
 |---|---|---|---|
-| Run envelope | JSON | `data/raw/pipeline/run-envelope.json`; [TODO: DEFINE] specify exact fields for this workflow. | Yes |
+| Run envelope | JSON | `data/raw/pipeline/run-envelope.json` — schema in **Run-envelope schema** below; worked sample at `data/examples/run-envelope.json`. | Yes |
 | Local evidence | JSON / CSV / Markdown | Repo-local `data/`, `pantry/`, or approved source paths named in Source Inventory. | Yes |
 | Human approval record | JSON | `logs/gate-decisions/`; [TODO: APPROVE] required before live network calls, external writes, publishing, email, model calls with sensitive data, or production database actions. | Yes for live mode |
+
+### Run-envelope schema
+
+The run envelope declares one run *before* any ingest. Live runs read it from
+`data/raw/pipeline/run-envelope.json`; a worked sample lives at
+`data/examples/run-envelope.json`.
+
+| Field | Type | Required | Meaning |
+|---|---|---|---|
+| `workflow` | string | yes | recipe name (`"pipeline"`) |
+| `run_id` | string | yes | unique id, e.g. `pipeline-YYYY-MM-DD-NNN` |
+| `mode` | `"sample"` \| `"live"` | yes | declared at the Scope gate before ingest |
+| `created_at` | ISO-8601 string | yes | when the envelope was written |
+| `requested_by` | string | yes | the human accountable for the run |
+| `sources` | array of `{name, path, type}` | yes | declared local-evidence inputs (see Source Inventory) |
+| `approvals` | array of paths to `logs/gate-decisions/*.json` | yes for `live` | satisfies the Approval gate |
+| `limits` | `{max_records: int, no_write: bool}` | optional | run caps; `no_write` maps to the step-5 `no_write_mode` |
+| `notes` | string | optional | free text |
+
+**Mode rules.** `mode: "live"` requires at least one `approvals[]` record and `no_write: false`.
+`mode: "sample"` runs with `no_write: true` and needs no approval. The Scope gate parses this
+file; the Approval gate checks `approvals[]` before any live network call, external write, or
+model call with sensitive data.
 
 ## Phase Gates
 

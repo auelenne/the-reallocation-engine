@@ -4,7 +4,6 @@ status: active
 updated: 2026-06-14
 canonical: [MYCROFT.md, DOMAIN.md, AGENTS.md, outline.md, book.md, chapters/]
 next:
-  - "Define the run-envelope schema in recipes/pipeline.md (unblocks scorer feeds + the honest run)"
   - "Complete one honest, logged, gated end-to-end run (gap #4)"
   - "Confirm the scorer [VERIFY] defaults (role_quality weight, Consider-band floor) vs docs/search-profile-design.md"
 blocked_by: null
@@ -25,10 +24,10 @@ _Read this first for current state._ `DOMAIN.md` = what the repo **is**; `logs/R
 **The honest run (gap #4).** No recipe has completed a logged, gated end-to-end run yet. Promoting any recipe past `DRAFT` requires it, and the schema/scorer-wiring work below exists to enable it.
 
 ## Open questions / decisions pending
-- **Run-envelope schema** is still `[TODO: DEFINE]` in `recipes/pipeline.md` — blocks wiring the Ch.7–10 evidence feeds into the scorer.
+- **Run-envelope schema** — defined in `recipes/pipeline.md` (worked sample: `data/examples/run-envelope.json`). The remaining step is wiring the Ch.7–10 feeds to *emit* it, tied to the honest run.
 - **Scorer `[VERIFY]` defaults:** the `role_quality` weight and the Consider-band floor reproduce the book but are not pinned by Ch.11 — confirm against `docs/search-profile-design.md` before using for real decisions.
 
 ## Recently done (2026-06-14)
-- Decluttered the root; dual-licensed (MIT code / CC BY 4.0 book); set up large-file handling (samples + gitignore + a pre-commit size guard, documented in `DATA.md`); added the CLI-agnostic AI tooling guide and a repo audit under `docs/`; reconciled agentic "skill" → "recipe" across the manuscript (gap #7).
+- Decluttered the root; dual-licensed (MIT code / CC BY 4.0 book); set up large-file handling (samples + gitignore + a pre-commit size guard, documented in `DATA.md`); added the CLI-agnostic AI tooling guide and a repo audit under `docs/`; reconciled agentic "skill" → "recipe" across the manuscript (gap #7); defined the pipeline run-envelope schema.
 
 _Update this file at the end of each working session: state, decisions, next actions. Keep it short — it's the current-state file, not a log._
