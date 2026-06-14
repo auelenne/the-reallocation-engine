@@ -25,9 +25,9 @@ _Read this first for current state._ `DOMAIN.md` = what the repo **is**; `logs/R
 
 ## Open questions / decisions pending
 - **Run-envelope schema** — defined in `recipes/pipeline.md` (worked sample: `data/examples/run-envelope.json`). The remaining step is wiring the Ch.7–10 feeds to *emit* it, tied to the honest run.
-- **Scorer `[VERIFY]` defaults:** the `role_quality` weight and the Consider-band floor reproduce the book but are not pinned by Ch.11 — confirm against `docs/search-profile-design.md` before using for real decisions.
+- **Scorer `[VERIFY]` defaults — checked:** neither Ch.11 nor the SDD pins them (confirmed unpinned). Open *authorial* call: `role_quality: 0.0` drops the Ch.9 role-quality signal from the composite — decide whether it should carry weight (and renormalise) before real decisions.
 
 ## Recently done (2026-06-14)
-- Decluttered the root; dual-licensed (MIT code / CC BY 4.0 book); set up large-file handling (samples + gitignore + a pre-commit size guard, documented in `DATA.md`); added the CLI-agnostic AI tooling guide and a repo audit under `docs/`; reconciled agentic "skill" → "recipe" across the manuscript (gap #7); defined the pipeline run-envelope schema.
+- Decluttered the root; dual-licensed (MIT code / CC BY 4.0 book); set up large-file handling (samples + gitignore + a pre-commit size guard, documented in `DATA.md`); added the CLI-agnostic AI tooling guide and a repo audit under `docs/`; reconciled agentic "skill" → "recipe" across the manuscript (gap #7); defined the pipeline run-envelope schema; verified the scorer [VERIFY] weights — confirmed unpinned by Ch.11 and the SDD (#3).
 
 _Update this file at the end of each working session: state, decisions, next actions. Keep it short — it's the current-state file, not a log._

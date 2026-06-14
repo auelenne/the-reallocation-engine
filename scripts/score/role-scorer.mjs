@@ -34,12 +34,15 @@ const CONFIG = {
   weights: {
     sponsorship: 0.35,   // [Ch.11] stated. Profile-conditional (see applyProfile).
     fit: 0.30,           // [Ch.11] stated. Model judgment.
-    role_quality: 0.0,   // [VERIFY] "other weighted factors" — chapter leaves the
-                         //   weight unstated; default 0 reproduces the worked example.
-                         //   Set per the system design document before relying on it.
+    role_quality: 0.0,   // [VERIFY] "other weighted factors" (Ch.11) — UNPINNED: neither
+                         //   Ch.11 nor docs/search-profile-design.md gives this a number
+                         //   (verified 2026-06-14). Default 0 reproduces Ch.11's worked
+                         //   example — but it also means the Ch.9 role-quality signal
+                         //   contributes NOTHING to the composite. Whether role quality
+                         //   should carry weight is an open authorial decision.
   },
   apply_threshold: 0.30, // [Ch.11] decision threshold "near 0.3".
-  consider_floor: 0.20,  // [VERIFY] lower edge of the Consider band — not pinned by the chapter.
+  consider_floor: 0.20,  // [VERIFY] lower edge of the Consider band — not pinned by Ch.11 or the SDD (verified 2026-06-14); placeholder.
   gate_zero: 0.05,       // a gate at/below this is treated as closed → Skip (gated).
   // a vote whose tier is a "soft spot" (e.g. Likely not Proven) demotes Apply→Consider:
   soft_sponsorship_tiers: ['likely', 'possible', 'unknown'],
