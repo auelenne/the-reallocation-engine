@@ -1,0 +1,37 @@
+target_role:
+  title: "Product Manager"
+  seniority: "Entry to Mid"
+  notes: "Targeting PM and PM Intern roles; open to Associate PM positions. First role in US market."
+
+visa:
+  current_status: "F-1"
+  authorization_end: "2028"
+  opt_planned: true
+  stem_eligible: true  # confirmed with DSO at Northeastern
+  sponsorship_required: true
+  sponsorship_notes: "H-1B sponsorship required to remain in the US after OPT period. Companies without sponsorship history are skip-regardless of fit."
+
+geography:
+  preferred:
+    - "San Francisco Bay Area, CA"
+    - "Silicon Valley, CA"
+  remote: open
+  relocation: false
+
+industry:
+  preferred:
+    - "Fintech"
+    - "Healthtech"
+    - "Enterprise Software"
+  excluded:
+    - "EdTech"
+    - "SaaS-only companies"
+  notes: "Open to any stable market outside excluded industries"
+
+company_size:
+  preference: "no preference"
+  range: "seed to public"
+
+hard_exclusions:
+  - "EdTech companies"
+  - "Companies with no H-1B sponsorship history"
