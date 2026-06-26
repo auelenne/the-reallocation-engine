@@ -1,0 +1,125 @@
+{
+  "attested": true,
+  "attested_date": "2026-06-24",
+  "attestation_note": "Three errors corrected: (1) removed employment type 'full-time' for UXStone — was not full-time; (2) removed 'problem_solved' field for banking services achievement — reason for problem was not stated in original resume, agent fabricated it; (3) removed 'problem_solved: Manual parcel processing inefficiency' for OCR project — cause of problem was not stated in original resume, agent added it from inference. SQL skill was missing from resume despite being a real skill — added during this exercise.",
+
+  "personal": {
+    "name": "Ayazhan Otelbay",
+    "title": "Product Manager",
+    "email": "otelbaya@gmail.com",
+    "phone": "(408)5901291"
+  },
+
+  "experience": [
+    {
+      "title": "Product Manager",
+      "company": "Qazpost",
+      "start": "2023-01",
+      "end": "2025-12",
+      "type": "full-time",
+      "description": "National postal operator of Kazakhstan, 3700+ branches, 35M+ parcels annually. Super app integrating postal, banking, marketplace, dropshipping, and customs clearance.",
+      "achievements": [
+        {
+          "description": "Launched C2C secure delivery service from scratch",
+          "impact": "Increased super app revenue by 2%",
+          "problem_solved": "Fraud issues on online classifieds platforms"
+        },
+        {
+          "description": "Initiated and launched OCR technology project from scratch",
+          "impact": "Reduced average parcel delivery time by 80%, increased CSAT from 2.6 to 4.8 (5-point scale)"
+        },
+        {
+          "description": "Implemented credit aggregator from idea to launch",
+          "impact": "Increased super app revenue by 5% in first month post-launch",
+          "problem_solved": "Users lacked access to loan offers from multiple banks in one place"
+        },
+        {
+          "description": "Launched banking services within Qazpost SuperApp (card transactions, new payment categories)",
+          "impact": "2x increase in ARPU"
+        },
+        {
+          "description": "Led cross-functional team",
+          "team_size": 9,
+          "team_composition": ["frontend engineers", "backend engineers", "mobile developers", "product analysts", "product designers", "systems analysts", "QA engineers"]
+        }
+      ]
+    },
+    {
+      "title": "Product Designer",
+      "company": "UXStone LLP",
+      "start": "2020-09",
+      "end": "2022-12",
+      "achievements": [
+        {
+          "description": "Designed single consistent website and design system for Jusan.kz ecosystem",
+          "impact": "Reduced costs of maintaining separate websites per department",
+          "domain": "FinTech",
+          "scale": "2.5M+ users"
+        },
+        {
+          "description": "Introduced AI-powered tool concept for housing and mortgage search",
+          "impact": "Increased direct website traffic, reducing reliance on aggregators",
+          "client": "BI Group, Dom.kz",
+          "domain": "PropTech"
+        },
+        {
+          "description": "Designed Gov.kz portal and design system",
+          "impact": "Improved Kazakhstan e-government UN rank from 39th to 28th",
+          "scale": "20M+ users"
+        }
+      ]
+    }
+  ],
+
+  "skills": {
+    "product_management": [
+      "Product Research",
+      "Customer Development",
+      "JTBD",
+      "Competitor Analysis",
+      "Backlog planning and prioritization",
+      "A/B tests",
+      "Cohort analysis"
+    ],
+    "analytics": [
+      "Amplitude",
+      "Appmetrica",
+      "Google Analytics",
+      "SQL"
+    ],
+    "tools": [
+      "Jira",
+      "Confluence",
+      "Figma",
+      "OptimalWorkshop"
+    ],
+    "methodologies": [
+      "Agile",
+      "Scrum",
+      "Kanban"
+    ],
+    "design": [
+      "Product Design",
+      "UX testing"
+    ]
+  },
+
+  "education": [
+    {
+      "institution": "Northeastern University",
+      "degree": "Master's",
+      "field": "Information Systems",
+      "start": "2026",
+      "end": "2028",
+      "status": "current"
+    },
+    {
+      "institution": "KazIR&WL",
+      "degree": "Bachelor's Degree",
+      "field": "Translation Studies (Chinese Language)",
+      "start": "2019",
+      "end": "2023",
+      "status": "completed"
+    }
+  ]
+}
