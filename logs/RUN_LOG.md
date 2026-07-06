@@ -57,4 +57,19 @@ Agent role: extracted resume data into JSON format, drafted profile.yml from int
 
 Student role: ran attestation pass on resume.json and found 3 errors; corrected all three; confirmed SQL skill missing from resume and added it; answered profile questions with facts not aspirations; confirmed STEM eligibility with DSO; identified and provided all target job postings (TikTok LIVE, Tesla, Sweatpals, Notion); killed one agent-generated gap row with written explanation; rewrote one gap row in own words; selected final two gaps as most relevant to Bay Area PM market.
 
-What the agent could not do: verify whether my experience was accurate, know my actual visa status, know whether Gov.kz work included compliance or was UX-only, know that SQL was missing from my resume despite being a real skill, determine which gaps were actually relevant to my situation.
+What the agent could not do: verify whether my experience was accurate, know my actual visa status, know whether Gov.kz work included compliance or was UX-only, know that SQL was missing from my resume despite being a real skill, determine which gaps were actually relevant to my situation. ### 2026-07-06 — case-pm-intl-h1b-cognitive-pivot (sample run)
+- Recipe: case-pm-intl-h1b-cognitive-pivot v0.1.0
+- By: Ayazhan Otelbay
+- Inputs: 1 posting URL (LinkedIn aggregator link, https://www.linkedin.com/jobs/view/4418663147)
+- Commands run: `npm run verify`; `npx playwright install`; `npm run ats:liveness -- <url>`; `npm run score` (no args, deliberate break attempt)
+- Output: verify passed (131 files conform, 4 non-blocking manifest warnings);
+  liveness check returned `uncertain` — "content present but no visible apply
+  control found" (0 active, 0 expired, 1 uncertain); `npm run score` with no
+  args printed a clean usage message, no crash
+- Result: liveness gate did not clear for this posting; role not scored further
+  per stop conditions defined in the recipe
+- Open issues: SOC crosswalk TODO open; role-scorer not yet run against a real
+  roles.json for this domain; sponsorship-gate check not yet run against real
+  data; liveness check not yet confirmed against a direct-ATS (Greenhouse/Lever/
+  Ashby) link, only against an aggregator link
+
