@@ -1,0 +1,22 @@
+[
+  {
+    "role_id": "insight-global-junior-pm-ai",
+    "company": "Insight Global (staffing agency — end client not disclosed in posting)",
+    "title": "Junior Product Manager (AI-Focused), contract",
+    "sponsorship": { "p": 0.0, "source": "record", "tier": "unknown" },
+    "fit": { "p": 0.75, "source": "model-judgment" },
+    "role_quality": { "p": 0.6, "source": "model-judgment" },
+    "liveness": { "factor": 1, "source": "record" },
+    "timeline": { "factor": 0.7, "source": "your-input" }
+  },
+  {
+    "role_id": "illustrative-known-sponsor-pm",
+    "company": "Illustrative example only — a large tech employer with a well-documented multi-year H-1B sponsorship history (not a live posting I am currently applying to)",
+    "title": "Product Manager, permanent",
+    "sponsorship": { "p": 0.85, "source": "record", "tier": "proven" },
+    "fit": { "p": 0.7, "source": "model-judgment" },
+    "role_quality": { "p": 0.6, "source": "model-judgment" },
+    "liveness": { "factor": 1, "source": "record" },
+    "timeline": { "factor": 0.9, "source": "your-input" }
+  }
+]

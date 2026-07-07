@@ -64,4 +64,50 @@ Next steps: (1) find a PM posting on a direct ATS link (Greenhouse/Lever/Ashby) 
 confirm the liveness check's `active` path, not just its `uncertain` path; (2) build
 a minimal `roles.json` for 1-2 real PM postings and run `npm run score` against it to
 exercise the sponsorship and role-quality gates for the first time; (3) close the SOC
-crosswalk TODO before treating role-quality output as anything more than approximate.
+crosswalk TODO before treating role-quality output as anything more than approximate.## Second run — role-scorer against the book's verified fixture
+
+To close the gap flagged above (role-scorer untested), I ran `npm run score`
+against the repo's own Ch.11 example fixture, since no PM-specific `roles.json`
+existed yet for this domain — this let me exercise the sponsorship and
+role-quality gates for the first time, using data already verified by the repo
+maintainer against the book (per `DOMAIN.md`, item 3).
+## Third run — role-scorer against a real PM posting (with an illustrative contrast case)
+
+To exercise the sponsorship and role-quality gates against domain-specific data
+(not just the repo's biotech fixture above), I built `data/examples/pm-roles.json`
+with two entries: one real posting I am currently evaluating, and one clearly
+labeled illustrative case for contrast — not a live posting.
+$ npm run score data/examples/pm-roles.json
+
+> the-reallocation-engine@1.0.0 score
+> node scripts/score/role-scorer.mjs data/examples/pm-roles.json
+
+✓ scored 2 roles → Apply 1 · Consider 0 · Skip 1 (skip 50%)
+  data/examples/role-scores.json  +  data/examples/role-scores.m| Role | Composite | Rec | Why |
+|---|---|---|---|
+| Illustrative example — known multi-year sponsor, PM permanent | 0.457 | **Apply** | composite >= 0.3, gates healthy |
+| Insight Global — Junior PM (AI-Focused), contract, real posting | 0.157 | **Skip** | composite 0.157 < 0.2 — time is better spent elsewhere |
+
+## Verified vs. inferred — third run
+
+| Claim | Status | Source |
+|---|---|---|
+| Insight Global does not appear in `data/80-days-to-stay/` | **Verified** | `grep -ril "insight global" data/80-days-to-stay/` returned zero results |
+| Insight Global is a staffing agency, not the end employer | **Verified** — stated directly in the job posting text I was evaluating, not inferred |
+| The `sponsorship: 0.0` value I assigned to this posting | **Inferred by me** — I chose 0.0 because the agency has no sponsorship record and the role is a 6-month contract, which structurally reduces new-hire sponsorship likelihood; this is my judgment, not a value the tool looked up |
+| The `fit: 0.75` and `role_quality: 0.6` values | **Inferred by me** — model-judgment labels in the input file itself; these are my assessment of the posting's requirements against a general PM skillset, not scored by any script |
+| The illustrative comparison row's sponsorship value (0.85, "proven") | **Not a real record** — explicitly labeled illustrative in the company field; included only to show the gate's behavior on a contrasting case, not presented as evidence about a real employer |
+
+This run directly demonstrates failure mode #1 from the Domain Justification:
+an agency-posted listing obscures the real sponsoring entity, so a sponsorship-
+history check against the agency's name returns nothing useful — not because
+sponsorship data is missing from the repo, but because the check is being run
+against the wrong entity. A candidate who does not know to look past the
+staffing agency's name would get no signal at all here, correctly reflected as
+`sponsorship: 0` rather than a false "no history" read on the actual employer.
+
+**Still open:** the two input values I assigned by judgment (`sponsorship: 0.0`,
+`fit: 0.75`, `role_quality: 0.6`) are not independently verified against a
+second source — a more rigorous version of this mode would require finding the
+actual end client behind the agency posting before scoring, rather than scoring
+the agency-obscured version at all.

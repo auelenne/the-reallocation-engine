@@ -1,7 +1,7 @@
 {
   "_scorer": "bayesian-role-scorer",
   "_chapter": 11,
-  "generated": "2026-06-14",
+  "generated": "2026-07-07",
   "config": {
     "weights": {
       "sponsorship": 0.35,
@@ -20,56 +20,13 @@
   "profile_needs_sponsorship": true,
   "roles": [
     {
-      "role_id": "biotech-data",
-      "company": "Cambridge biotech (Ch.7)",
-      "title": "Data role (Proven tier)",
-      "composite": 0.4462,
-      "recommendation": "Apply",
-      "machine_recommendation": "Apply",
-      "reason": "composite 0.446 ≥ 0.3, gates healthy",
-      "override": null,
-      "trace": {
-        "votes": [
-          {
-            "factor": "sponsorship",
-            "value": 0.9,
-            "weight": 0.35,
-            "contribution": 0.315,
-            "source": "record"
-          },
-          {
-            "factor": "fit",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21,
-            "source": "model-judgment"
-          }
-        ],
-        "vote_sum": 0.525,
-        "gates": [
-          {
-            "factor": "liveness",
-            "multiplier": 1,
-            "source": "record"
-          },
-          {
-            "factor": "timeline",
-            "multiplier": 0.85,
-            "source": "your-input"
-          }
-        ],
-        "gate_product": 0.85,
-        "arithmetic": "(0.9·0.35 + 0.7·0.3) × 1 × 0.85 = 0.446"
-      }
-    },
-    {
-      "role_id": "household-nonsponsor",
-      "company": "Household-name non-sponsor",
-      "title": "Same data role",
-      "composite": 0.1785,
+      "role_id": "insight-global-junior-pm-ai",
+      "company": "Insight Global (staffing agency — end client not disclosed in posting)",
+      "title": "Junior Product Manager (AI-Focused), contract",
+      "composite": 0.1575,
       "recommendation": "Skip",
       "machine_recommendation": "Skip",
-      "reason": "composite 0.178 < 0.2 — time is better spent elsewhere",
+      "reason": "composite 0.157 < 0.2 — time is better spent elsewhere",
       "override": null,
       "trace": {
         "votes": [
@@ -82,13 +39,20 @@
           },
           {
             "factor": "fit",
-            "value": 0.7,
+            "value": 0.75,
             "weight": 0.3,
-            "contribution": 0.21,
+            "contribution": 0.225,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.6,
+            "weight": 0,
+            "contribution": 0,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.21,
+        "vote_sum": 0.225,
         "gates": [
           {
             "factor": "liveness",
@@ -97,84 +61,48 @@
           },
           {
             "factor": "timeline",
-            "multiplier": 0.85,
+            "multiplier": 0.7,
             "source": "your-input"
           }
         ],
-        "gate_product": 0.85,
-        "arithmetic": "(0·0.35 + 0.7·0.3) × 1 × 0.85 = 0.178"
+        "gate_product": 0.7,
+        "arithmetic": "(0·0.35 + 0.75·0.3 + 0.6·0) × 1 × 0.7 = 0.157"
       }
     },
     {
-      "role_id": "ghost-posting",
-      "company": "Proven sponsor (ghost posting)",
-      "title": "Looks perfect, isn't real",
-      "composite": 0,
-      "recommendation": "Skip",
-      "machine_recommendation": "Skip",
-      "reason": "gated: liveness ≈ 0.000 (a closed gate zeroes the composite regardless of votes)",
+      "role_id": "illustrative-known-sponsor-pm",
+      "company": "Illustrative example only — a large tech employer with a well-documented multi-year H-1B sponsorship history (not a live posting I am currently applying to)",
+      "title": "Product Manager, permanent",
+      "composite": 0.4567,
+      "recommendation": "Apply",
+      "machine_recommendation": "Apply",
+      "reason": "composite 0.457 ≥ 0.3, gates healthy",
       "override": null,
       "trace": {
         "votes": [
           {
             "factor": "sponsorship",
-            "value": 0.9,
-            "weight": 0.35,
-            "contribution": 0.315,
-            "source": "record"
-          },
-          {
-            "factor": "fit",
-            "value": 0.8,
-            "weight": 0.3,
-            "contribution": 0.24,
-            "source": "model-judgment"
-          }
-        ],
-        "vote_sum": 0.555,
-        "gates": [
-          {
-            "factor": "liveness",
-            "multiplier": 0,
-            "source": "record"
-          },
-          {
-            "factor": "timeline",
-            "multiplier": 0.85,
-            "source": "your-input"
-          }
-        ],
-        "gate_product": 0,
-        "arithmetic": "(0.9·0.35 + 0.8·0.3) × 0 × 0.85 = 0.000"
-      }
-    },
-    {
-      "role_id": "likely-soft",
-      "company": "Likely-tier sponsor",
-      "title": "Strong but Likely not Proven",
-      "composite": 0.4185,
-      "recommendation": "Consider",
-      "machine_recommendation": "Consider",
-      "reason": "above threshold (0.418) but one soft spot: sponsorship tier \"Likely\"",
-      "override": null,
-      "trace": {
-        "votes": [
-          {
-            "factor": "sponsorship",
-            "value": 0.6,
-            "weight": 0.35,
-            "contribution": 0.21,
-            "source": "record"
-          },
-          {
-            "factor": "fit",
             "value": 0.85,
+            "weight": 0.35,
+            "contribution": 0.2975,
+            "source": "record"
+          },
+          {
+            "factor": "fit",
+            "value": 0.7,
             "weight": 0.3,
-            "contribution": 0.255,
+            "contribution": 0.21,
+            "source": "model-judgment"
+          },
+          {
+            "factor": "role_quality",
+            "value": 0.6,
+            "weight": 0,
+            "contribution": 0,
             "source": "model-judgment"
           }
         ],
-        "vote_sum": 0.465,
+        "vote_sum": 0.5075,
         "gates": [
           {
             "factor": "liveness",
@@ -188,53 +116,7 @@
           }
         ],
         "gate_product": 0.9,
-        "arithmetic": "(0.6·0.35 + 0.85·0.3) × 1 × 0.9 = 0.418"
-      }
-    },
-    {
-      "role_id": "override-demo",
-      "company": "Non-sponsor, but HM is a contact",
-      "title": "Scorer says Skip, you know better",
-      "composite": 0.1934,
-      "recommendation": "Apply",
-      "machine_recommendation": "Skip",
-      "reason": "composite 0.193 < 0.2 — time is better spent elsewhere",
-      "override": {
-        "decision": "Apply",
-        "reason": "Hiring manager told me directly they are interviewing and the company started sponsoring last month; LCA record lags."
-      },
-      "trace": {
-        "votes": [
-          {
-            "factor": "sponsorship",
-            "value": 0.05,
-            "weight": 0.35,
-            "contribution": 0.0175,
-            "source": "record"
-          },
-          {
-            "factor": "fit",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21,
-            "source": "model-judgment"
-          }
-        ],
-        "vote_sum": 0.2275,
-        "gates": [
-          {
-            "factor": "liveness",
-            "multiplier": 1,
-            "source": "record"
-          },
-          {
-            "factor": "timeline",
-            "multiplier": 0.85,
-            "source": "your-input"
-          }
-        ],
-        "gate_product": 0.85,
-        "arithmetic": "(0.05·0.35 + 0.7·0.3) × 1 × 0.85 = 0.193"
+        "arithmetic": "(0.85·0.35 + 0.7·0.3 + 0.6·0) × 1 × 0.9 = 0.457"
       }
     }
   ]
