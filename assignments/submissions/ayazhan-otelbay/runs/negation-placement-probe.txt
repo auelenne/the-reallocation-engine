@@ -1,0 +1,6 @@
+=== Probe: negation placed AFTER the exemption token (known limitation, not gated) ===
+text: "US citizen? Not anymore, I actually need sponsorship now"
+engine returned needs_sponsorship=false (a real candidate here needs sponsorship, i.e. this should read true)
+LIMITATION CONFIRMED: the negation-aware patch only checks the words before a matched token; negation placed after the token is missed.
+
+exit code: 0

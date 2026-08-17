@@ -1,0 +1,23 @@
+=== sponsorship-wording-harness (mode=verify) ===
+engine under test: scripts/score/role-scorer.partial-stub.mjs
+
+[case1-citizen] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+[case2-green-card] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+[case3-negation-blind] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+[case4-opt-authorized] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+[case5-stem-opt] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+[case6-no-status] NO RESULT — NO RESULT: role-scores.json has the top-level shape but role.trace.votes is missing the sponsorship entry — no classification trace to compare against
+=== OPEN QUESTION (non-gating): role_quality weight ===
+OPEN QUESTION check skipped: no successful engine run to read config from.
+
+=== Summary ===
+6 fixtures, 0 bug(s), 6 NO RESULT
+  case1-citizen: NO RESULT
+  case2-green-card: NO RESULT
+  case3-negation-blind: NO RESULT
+  case4-opt-authorized: NO RESULT
+  case5-stem-opt: NO RESULT
+  case6-no-status: NO RESULT
+
+exit code: 1
+exit code: 1

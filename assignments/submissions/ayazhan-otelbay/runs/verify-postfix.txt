@@ -1,0 +1,48 @@
+=== sponsorship-wording-harness (mode=verify) ===
+engine under test: scripts/score/role-scorer.patched.mjs
+
+[case1-citizen] PASS
+    text: "US citizen"
+    expected needs_sponsorship=false, engine returned needs_sponsorship=false
+    sponsorship vote weight used by engine: 0
+
+[case2-green-card] PASS
+    text: "Green card holder"
+    expected needs_sponsorship=false, engine returned needs_sponsorship=false
+    sponsorship vote weight used by engine: 0
+
+[case3-negation-blind] PASS
+    text: "I am not a US citizen"
+    expected needs_sponsorship=true, engine returned needs_sponsorship=true
+    sponsorship vote weight used by engine: 0.35
+
+[case4-opt-authorized] PASS
+    text: "Employment authorized under OPT"
+    expected needs_sponsorship=true, engine returned needs_sponsorship=true
+    sponsorship vote weight used by engine: 0.35
+
+[case5-stem-opt] PASS
+    text: "F-1 OPT, currently work authorized, will need H-1B sponsorship in 11 months"
+    expected needs_sponsorship=true, engine returned needs_sponsorship=true
+    sponsorship vote weight used by engine: 0.35
+
+[case6-no-status] PASS
+    text: "No visa status disclosed, requires sponsorship"
+    expected needs_sponsorship=true, engine returned needs_sponsorship=true
+    sponsorship vote weight used by engine: 0.35
+
+=== OPEN QUESTION (non-gating): role_quality weight ===
+role_quality weight, read verbatim from the engine's own config: reported above per-run (see sponsorship_weight_used lines);
+this harness does NOT assign a value to role_quality — no chapter or design doc pins a number, so any weight chosen here would be invented.
+
+=== Summary ===
+6 fixtures, 0 bug(s), 0 NO RESULT
+  case1-citizen: PASS
+  case2-green-card: PASS
+  case3-negation-blind: PASS
+  case4-opt-authorized: PASS
+  case5-stem-opt: PASS
+  case6-no-status: PASS
+
+exit code: 0
+exit code: 0

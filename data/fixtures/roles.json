@@ -1,0 +1,12 @@
+[
+  {
+    "role_id": "fixture-role-1",
+    "company": "Fictional Fixture Co",
+    "title": "Product Manager",
+    "sponsorship": { "p": 0.8, "source": "record", "tier": "proven" },
+    "fit": { "p": 0.7, "source": "model-judgment" },
+    "role_quality": { "p": 0.6, "source": "record" },
+    "liveness": { "factor": 1.0, "source": "record" },
+    "timeline": { "factor": 1.0, "source": "your-input" }
+  }
+]

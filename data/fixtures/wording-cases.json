@@ -1,0 +1,44 @@
+[
+  {
+    "id": "case1-citizen",
+    "profile": "profiles/case1-citizen.json",
+    "text": "US citizen",
+    "expected_needs_sponsorship": false,
+    "note": "Correctly a non-sponsor case; regex token 'citizen' should fire and is right to fire here."
+  },
+  {
+    "id": "case2-green-card",
+    "profile": "profiles/case2-green-card.json",
+    "text": "Green card holder",
+    "expected_needs_sponsorship": false,
+    "note": "Correctly a non-sponsor case; regex token 'green'/'gc' should fire and is right to fire here."
+  },
+  {
+    "id": "case3-negation-blind",
+    "profile": "profiles/case3-negation-blind.json",
+    "text": "I am not a US citizen",
+    "expected_needs_sponsorship": true,
+    "note": "Negation-blind failure: candidate explicitly states they are NOT a citizen (i.e. they DO need sponsorship), but the bare regex matches the token 'citizen' with no negation handling."
+  },
+  {
+    "id": "case4-opt-authorized",
+    "profile": "profiles/case4-opt-authorized.json",
+    "text": "Employment authorized under OPT",
+    "expected_needs_sponsorship": true,
+    "note": "Standard I-765 OPT phrasing. Candidate is currently authorized to work but will need H-1B sponsorship to continue after OPT ends. The bare token 'authorized' incorrectly zeroes the sponsorship weight."
+  },
+  {
+    "id": "case5-stem-opt",
+    "profile": "profiles/case5-stem-opt.json",
+    "text": "F-1 OPT, currently work authorized, will need H-1B sponsorship in 11 months",
+    "expected_needs_sponsorship": true,
+    "note": "Candidate explicitly states they will need sponsorship soon, in the same sentence as 'authorized'. The regex fires on 'authorized' anyway and ignores the explicit statement of future sponsorship need."
+  },
+  {
+    "id": "case6-no-status",
+    "profile": "profiles/case6-no-status.json",
+    "text": "No visa status disclosed, requires sponsorship",
+    "expected_needs_sponsorship": true,
+    "note": "No matched token in this phrasing, so needsSponsor correctly stays true (the engine's default when profile text does not match any exemption token)."
+  }
+]
